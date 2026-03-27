@@ -1,5 +1,5 @@
-FROM ubuntu:14.04
+FROM ubuntu:22.04
 RUN apt-get update && apt-get install apache2 -y
-RUN cd /var/www/html
-Run echo "hello India">index.html
-RUN service apache2 restart
+RUN echo "hello India" > /var/www/html/index.html
+EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]
